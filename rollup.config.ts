@@ -29,6 +29,11 @@ const scriptName =
     typeof packageMetadata.displayName === 'string' &&
     packageMetadata.displayName) ||
   convertConvention(packagePureName, 'Space Case');
+const shortScriptName =
+  ('shortDisplayName' in packageMetadata &&
+    typeof packageMetadata.shortDisplayName === 'string' &&
+    packageMetadata.shortDisplayName) ||
+  scriptName;
 
 function transformSourcemapPath(path: string): string {
   const topLevelPath = path.replace(/^(\.\.\/)*/, '');
@@ -60,7 +65,9 @@ export default {
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('production'),
       __SCRIPT_ID__: JSON.stringify(`${packageAuthor}/${packagePureName}`),
+      __SCRIPT_AUTHOR__: JSON.stringify(packageAuthor),
       __SCRIPT_NAME__: JSON.stringify(scriptName),
+      __SCRIPT_SHORT_NAME__: JSON.stringify(shortScriptName),
       __BUILD_TIME__: JSON.stringify(new Date()),
     }),
     addBanner({ file: 'tampermonkey.meta.js' }),
