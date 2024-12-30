@@ -5,4 +5,4 @@ function AppComponent() {
 }
 AppComponent.displayName = 'App';
 
-export const App = asScriptTab(AppComponent, 'My Userscript');
+export const App = asScriptTab(AppComponent, __SCRIPT_SHORT_NAME__);
