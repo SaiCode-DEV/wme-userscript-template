@@ -6,5 +6,4 @@
 // @match https://*.waze.com/*editor*
 // @match https://waze.com/*editor*
 // @match https://*.wazestg.com/*editor*
-// @connect distributions.crowdin.net
 // ==/UserScript==
