@@ -66,7 +66,10 @@ A modern template for creating Waze Map Editor (WME) userscripts using TypeScrip
    - Tampermonkey will prompt you to install the development version
    - The dev version will automatically load the latest changes from your local server
 
-3. Write your script code starting with `src/App.tsx`
+3. **Important Development Setting:**
+   - <span style="color: red">**In Tampermonkey settings, under "Externals" tab, set "Update Interval" to "Always"**</span>
+
+4. Write your script code starting with `src/App.tsx`
    - Changes will be compiled automatically
    - Refresh WME to see your changes
 
