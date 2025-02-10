@@ -53,12 +53,30 @@ A modern template for creating Waze Map Editor (WME) userscripts using TypeScrip
 
 ### Development
 
-1. Write your script code starting with `src/App.tsx`
-2. Build the script:
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   This will:
+   - Start Rollup in watch mode to compile your changes
+   - Start a local dev server at http://localhost:3000
+
+2. Install the development version:
+   - Open http://localhost:3000/install-dev.user.js in your browser
+   - Tampermonkey will prompt you to install the development version
+   - The dev version will automatically load the latest changes from your local server
+
+3. Write your script code starting with `src/App.tsx`
+   - Changes will be compiled automatically
+   - Refresh WME to see your changes
+
+### Production
+
+For production builds:
    ```bash
    npm run build
    ```
-3. Find the compiled script in `dist/`:
+   Find the compiled scripts in `dist/`:
    - `your-script-name.user.js` - readable version
    - `your-script-name.min.user.js` - minified version
 
