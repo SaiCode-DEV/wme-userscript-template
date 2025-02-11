@@ -5,7 +5,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup -c --configPlugin typescript --bundleConfigAsCjs"
+    "dev": "concurrently \"rollup --watch -c --configPlugin typescript --bundleConfigAsCjs\" \"node server.js\"",
+    "build": "rollup -c --configPlugin typescript --bundleConfigAsCjs",
+    "lint": "eslint . --fix"
   },
   "type": "module",
   "devDependencies": {
@@ -36,6 +38,7 @@
   },
   "private": true,
   "dependencies": {
+    "concurrently": "^9.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
